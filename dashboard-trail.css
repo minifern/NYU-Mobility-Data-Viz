@@ -1,0 +1,499 @@
+body { margin:0; padding:0; }
+text {
+font-size: 12pt;
+font-family: 'Roboto', sans-serif;
+fill: #fff;
+}
+text.robo {
+font-size: 22pt;
+font-family: 'Roboto', sans-serif;
+fill: #fff;
+}
+h1 {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 24px;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 4px;
+  font-weight: bold;
+}
+h2 {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  color: #D3D3D3;
+  font-size: 20px;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 20px;
+  margin-right: 0px;
+  font-weight: normal;
+}
+h3 {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  color: #808080;
+  font-size: 17px;
+  margin-top: 0.8em;
+  margin-bottom: 0.67em;
+  margin-left: 30px;
+  margin-right: 0px;
+  font-weight: lighter;
+}
+.button {
+  background-color: #303030; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 30px;
+  border-radius: 8px;
+}
+  #map { position:fixed; left: 21%; top:5%;}
+
+    html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            margin: 20px;
+        }
+        #map {
+            width: 50%;
+            height: 75%;
+        }
+        svg {
+            position: relative;
+        }
+        path {
+            fill: "yellow";
+            stroke-width: 2px;
+            stroke: red;
+            stroke-opacity: 1;
+        }
+        .travelMarker {
+            fill: orange;
+            opacity: 0.75;
+        }
+        .waypoints {
+            fill: black;
+            opacity: 0;
+        }
+    }
+    .destination {
+        stroke: black;
+        fill: red;
+    }
+    .lineConnect {
+        fill: none;
+        stroke: #01D7FE;
+        opacity: .4;
+    }
+    .segments {
+        fill: none;
+        stroke: #01D7FE;
+        opacity: .4;
+    }
+    .chainLineConnect {
+        fill: none;
+        stroke: #01D7FE;
+        opacity: .4;
+    }
+    .constLineConnect {
+        fill: none;
+        stroke: #01D7FE;
+        opacity: .4;
+    }
+    .locnames {
+        fill: white;
+        font-weight: bold;
+        font-size: 10px;
+    }
+    .start-button{
+        position:fixed;
+        top: 5%;
+        left: 4%;
+        background-color: #1398b2;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+        color: black;
+        padding: 20px 34px;
+    }
+    .play-button{
+        position:fixed;
+        top: 15%;
+        left: 4%;
+        background-color: #1398b2;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+        color: black;
+        padding: 20px 35px;
+    }
+    .data-button{
+        position:fixed;
+        top: 25%;
+        left: 4%;
+        background-color: #1398b2;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+        padding: 20px 28px;
+    }
+    .reset-button{
+        position:fixed;
+        top: 25%;
+        left: 4%;
+        background-color: #1398b2;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+        color: black;
+        padding: 20px 57px;
+    }
+    .display-data{
+        position:fixed;
+        top: 45%;
+        left: 4%;
+        width:80px;
+        height:240px;
+        background-color: #202020;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+        padding: 20px 50px;
+    }
+    .vid-container {
+        position:fixed;
+        left: 73%;
+        top:0%;
+        width:320px;
+        height: 640px;
+    }
+    .map{
+        position:fixed;
+        top: 25%;
+        left: 60%;
+    }
+    .buttons{
+        width:15%;
+    }
+    video{
+        width:100%;
+        height:100%;
+    }
+    rect.bordered {
+        stroke: #000000;
+        stroke-width:0px;
+    }
+    text.dataToShow {
+    font-size: 18pt;
+    font-family: 'Roboto', sans-serif;
+    fill: #fff;
+    position: fixed;
+      width: 100%;
+      padding-bottom: 100%; /* aspect ratio */
+      vertical-align: bottom;
+    }
+    text.mono {
+    font-size: 11pt;
+    font-family: 'Roboto', sans-serif;
+    fill: #fff;
+    position: fixed;
+    width: 80%;
+    padding-bottom: 70%; /* aspect ratio */
+    vertical-align: bottom;
+    }
+
+    text.day-axis {
+    fill: #eee;
+    }
+
+    text.time-axis {
+    fill: #eee;
+    }
+    .sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 12pt;
+    font-family: 'Roboto', sans-serif;
+    fill: #fff;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    background-color: #1398b2;
+    padding: 20px 30px;
+    margin-left: 15px;
+    border: none;
+  }
+
+  .openbtn:hover {
+    background-color: #444;
+  }
+  input[type="range"] {
+    width: 30px;
+  }
+
+  input[type="text"]:invalid {
+    outline: 2px solid red;
+  }
+
+  div {
+    margin: 2rem;
+  }
+
+  .screen-reader-only {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* Customize the label (the container) */
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #1398b2;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+  // Reset
+  * {
+    &,
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+
+  body {
+    font-family: sans-serif;
+    padding: 60px 20px;
+
+    @media (min-width: 600px) {
+      padding: 60px;
+    }
+  }
+
+  .range-slider {
+    margin: 30px 0 0 0%;
+  }
+
+
+  // Range Slider
+  $range-width: 100% !default;
+
+  $range-handle-color: $shade-10 !default;
+  $range-handle-color-hover: $teal !default;
+  $range-handle-size: 20px !default;
+
+  $range-track-color: $shade-1 !default;
+  $range-track-height: 10px !default;
+
+  $range-label-color: $shade-10 !default;
+  $range-label-width: 60px !default;
+
+  .range-slider {
+    width: $range-width;
+  }
+
+  .range-slider__range {
+    -webkit-appearance: none;
+    width: 50px;
+    height: $range-track-height;
+    border-radius: 5px;
+    background: $range-track-color;
+    outline: none;
+    padding: 0;
+    margin: 0;
+
+    // Range Handle
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: $range-handle-size;
+      height: $range-handle-size;
+      border-radius: 50%;
+      background: $range-handle-color;
+      cursor: pointer;
+      transition: background .15s ease-in-out;
+
+      &:hover {
+        background: $range-handle-color-hover;
+      }
+    }
+
+    &:active::-webkit-slider-thumb {
+      background: $range-handle-color-hover;
+    }
+
+    &::-moz-range-thumb {
+      width: $range-handle-size;
+      height: $range-handle-size;
+      border: 0;
+      border-radius: 50%;
+      background: $range-handle-color;
+      cursor: pointer;
+      transition: background .15s ease-in-out;
+
+      &:hover {
+        background: $range-handle-color-hover;
+      }
+    }
+
+    &:active::-moz-range-thumb {
+      background: $range-handle-color-hover;
+    }
+
+    // Focus state
+    &:focus {
+
+      &::-webkit-slider-thumb {
+        box-shadow: 0 0 0 3px $shade-0,
+                    0 0 0 6px $teal;
+      }
+    }
+  }
+
+
+  // Range Label
+  .range-slider__value {
+    display: inline-block;
+    position: relative;
+    width: $range-label-width;
+    color: $shade-0;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background: $range-label-color;
+    padding: 5px 10px;
+    margin-left: 8px;
+
+    &:after {
+      position: absolute;
+      top: 8px;
+      left: -7px;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-right: 7px solid $range-label-color;
+      border-bottom: 7px solid transparent;
+      content: '';
+    }
+  }
+
+
+  // Firefox Overrides
+  ::-moz-range-track {
+      background: $range-track-color;
+      border: 0;
+  }
+
+  input::-moz-focus-inner,
+  input::-moz-focus-outer {
+    border: 0;
+  }
