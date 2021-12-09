@@ -1,8 +1,8 @@
 # NYU-Mobility-Data-Viz
 
-Iterations of Orientation and Mobility Data Visualization Project
+This is an Orientation and Mobility Data Visualization Project, using a website dashboard to track mobility data (step count, GPS location, ) of O&M patients
 
-Website dashboard used to track mobility data of O&M patients
+Sample data is in ```bash mobility.json ```
 
 Worked under Graham Dove at NYU Center for Urban Science and Progress (CUSP)
 
