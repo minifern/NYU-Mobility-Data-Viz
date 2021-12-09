@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v5.min.js" type="text/javascript"></script>
+    <script src="d3-simple-slider.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css"/>
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" type= "text/css" href="dashboard_trail.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body style="background-color:black;">
+
+    <section class="trail">
+        <div class="vid-container">
+            <video id='video' poster="nyu_mobil.png">
+            </video>
+        </div>
+        <div id='map'></div>
+    </section>
+    <script type= "text/javascript" src = "text_dashboard_v3.js"></script>
+    <div id="startButton" style= text-align:center>
+        <input id="startTrail"
+             type="button"
+             value="START TRAIL"
+             class = "start-button"
+             onclick="startingTrail()"/>
+    </div>
+    <div id="playButton" style= text-align:center>
+        <input id="playTrail"
+             type="button"
+             value="PLAY/PAUSE"
+             class = "play-button"/>
+    </div>
+    <div id="resetButton" style= text-align:center>
+        <input id="resetTrail"
+             type="button"
+             value="RESET"
+             class = "reset-button"/>
+    </div>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <h1 style="text-align:right">Dashboard Settings</h1>
+      <h2>Data to Display:</h2>
+      <h3>Time
+        <label class="container2">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </h3>
+      <h3>Pace
+        <label class="container2">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </h3>
+      <h3>Step Count
+        <label class="container2">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </h3>
+      <h3>Pace Deviation
+        <label class="container2">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </h3>
+      <h3>Cadence
+        <label class="container2">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </h3>
+      <h3>____</h2>
+      <h2>Deviance Thresholds:</h2>
+        <div class="range-slider">
+          <h3>Pace
+            <input class="range-slider__range" type="range" value="100" min="0" max="500">
+            <span class="range-slider__value">0</span>
+          </h3>
+        </div>
+        <div class="range-slider">
+          <h3>Cadence
+            <input class="range-slider__range" type="range" value="100" min="0" max="500">
+            <span class="range-slider__value">0</span>
+          </h3>
+        </div>
+        <div class="range-slider">
+          <h3>Stops
+            <input class="range-slider__range" type="range" value="100" min="0" max="500">
+            <span class="range-slider__value">0 secs</span>
+          </h3>
+        </div>
+        <button class="button">Save Changes</button>
+    </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">PREFERENCES</button>
+    </div>
+  </body>
+</html>
